@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
         b = std::stoi(argv[2]);
     }
 
-    std::cout << "a = " << std::to_string(a) << ", b = " << std::to_string(b) << ".\n" << supa::add_string(a, b) << std::endl;
+    std::cout << "a = " << a << ", b = " << b << ".\n" << supa::add_string(a, b) << std::endl;
 
     return 0;
 }

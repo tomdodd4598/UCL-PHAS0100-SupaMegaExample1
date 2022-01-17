@@ -1,9 +1,9 @@
 add_library(ArithmeticLib arithmetic.cpp)
-target_include_directories(ArithmeticLib PRIVATE ${MyProject_SOURCE_DIR}/include)
+target_include_directories(ArithmeticLib PRIVATE ${IncludeDir})
 
 add_library(SupaLib supa.cpp)
-target_include_directories(SupaLib PUBLIC ${MyProject_SOURCE_DIR}/include)
-target_link_libraries(SupaLib ArithmeticLib)
+target_include_directories(SupaLib PUBLIC ${IncludeDir})
+target_link_libraries(SupaLib PUBLIC ArithmeticLib)
 
 add_executable(SupaMega main.cpp)
-target_link_libraries(SupaMega SupaLib)
+target_link_libraries(SupaMega PRIVATE SupaLib)
