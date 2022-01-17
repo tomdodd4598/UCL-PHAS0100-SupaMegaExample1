@@ -1,6 +1,10 @@
-project(CMakeLibraryAndApp)
-add_library(MY_MATHS mp_adding.cpp mp_multiplying.cpp)
-add_library(MY_LIBRARY mp_printing.cpp)
-target_link_libraries(MY_LIBRARY MY_MATHS)
-add_executable(my_app main.cpp)
-target_link_libraries(my_app MY_LIBRARY)
+cmake_minimum_required(VERSION 3.5)
+
+set(MyProject SupaMegaExample1)
+project(MyProject)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+add_subdirectory(src)
