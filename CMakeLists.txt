@@ -1,0 +1,6 @@
+project(CMakeLibraryAndApp)
+add_library(MY_MATHS mp_adding.cpp mp_multiplying.cpp)
+add_library(MY_LIBRARY mp_printing.cpp)
+target_link_libraries(MY_LIBRARY MY_MATHS)
+add_executable(my_app main.cpp)
+target_link_libraries(my_app MY_LIBRARY)
