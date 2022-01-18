@@ -1,7 +1,7 @@
-add_library(ArithmeticLib arithmetic.cpp)
+add_library(ArithmeticLib STATIC arithmetic.cpp)
 target_include_directories(ArithmeticLib PRIVATE ${IncludeDir})
 
-add_library(SupaLib supa.cpp)
+add_library(SupaLib STATIC supa.cpp)
 target_include_directories(SupaLib PUBLIC ${IncludeDir})
 target_link_libraries(SupaLib PUBLIC ArithmeticLib)
 
