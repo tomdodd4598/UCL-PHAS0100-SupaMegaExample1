@@ -9,7 +9,7 @@ namespace supa {
         long c = arithmetic::add_integers(a, b);
         long d = arithmetic::add_pointers(&a, &b);
 
-        std::string str = "Out of function: ";
+        std::string str = "Sum out of function: ";
         str += std::to_string(c);
         str += ", ";
         str += std::to_string(d);
@@ -18,7 +18,7 @@ namespace supa {
         arithmetic::add_integers(a, b, &c);
         arithmetic::add_pointers(&a, &b, d);
 
-        str += "Inside function: ";
+        str += "Sum inside function: ";
         str += std::to_string(c);
         str += ", ";
         str += std::to_string(d);

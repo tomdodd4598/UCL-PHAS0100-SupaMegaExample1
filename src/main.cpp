@@ -23,6 +23,9 @@ int main(int argc, char** argv) {
     auto vals = std::vector<long>();
     for (int i = 1; i < argc; ++i) {
         std::cout << argv[i];
+        if (i < argc - 1) {
+            std::cout << ", ";
+        }
         vals.push_back(std::stol(argv[i]));
     }
     std::cout << " -> " << factors::highest_common_factor(vals) << std::endl;

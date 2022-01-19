@@ -2,9 +2,10 @@
 #define FACTORS_H
 
 #include <cstdlib>
-#include <vector>
+#include <iterator>
 #include <stdint.h>
 #include <utility>
+#include <vector>
 
 namespace factors {
 
@@ -25,7 +26,7 @@ namespace factors {
                 return hcf;
             }
             else {
-                auto next = std::vector<long>{vals.begin(), vals.end() - 2};
+                auto next = std::vector<long>(vals.begin() + 2, vals.end());
                 next.push_back(hcf);
                 return highest_common_factor(std::move(next));
             }
