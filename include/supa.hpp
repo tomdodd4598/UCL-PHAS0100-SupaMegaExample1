@@ -7,9 +7,7 @@
 
 namespace supa {
 
-    typedef arithmetic::isize isize;
-
-    std::string add_string(isize a, isize b);
+    std::string add_string(long a, long b);
 }
 
 #endif

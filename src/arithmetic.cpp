@@ -2,19 +2,19 @@
 
 namespace arithmetic {
 
-    isize add_integers(isize a, isize b) {
+    long add_integers(long a, long b) {
         return a + b;
     }
 
-    isize add_pointers(isize* a, isize* b) {
+    long add_pointers(long* a, long* b) {
         return *a + *b;
     }
 
-    void add_integers(isize a, isize b, isize* c) {
+    void add_integers(long a, long b, long* c) {
         *c = a + b;
     }
 
-    void add_pointers(isize* a, isize* b, isize& c) {
+    void add_pointers(long* a, long* b, long& c) {
         c = *a + *b;
     }
 }

@@ -1,42 +1,25 @@
-#include "arithmetic.hpp"
 #include "catch.hpp"
+#include "factors.hpp"
 #include "main.hpp"
 
 #include <iostream>
-#include <string>
+#include <vector>
 
-#define TEST_SECTION_START \
-std::cout << "Section start: a = " << a << ", b = " << b << "." << std::endl;\
-a = std::stoi(test::argv[1]), b = std::stoi(test::argv[2]);\
-isize d = a + b;\
-
-TEST_CASE("Command line arguments", "[addition2]") {
+TEST_CASE("Highest common factors", "[factors]") {
     
-    if (test::argc <= 2) {
+    if (test::argc < 3) {
         std::cerr << "Requires at least two arguments!" << std::endl;
-        REQUIRE(test::argc > 2);
+        REQUIRE(false);
     }
     else {
         REQUIRE(true);
 
-        typedef arithmetic::isize isize;
-
-        isize a = 0, b = 0, c = 0;
-
-        SECTION("add_integers") {
-            TEST_SECTION_START
-            REQUIRE(arithmetic::add_integers(a, b) == d);
-
-            arithmetic::add_integers(a, b, &c);
-            REQUIRE(c == d);
+        auto vals = std::vector<long>();
+        for (int i = 1; i < test::argc - 1; ++i) {
+            vals.push_back(std::stol(test::argv[i]));
         }
+        long hcf = std::stol(test::argv[test::argc - 1]);
 
-        SECTION("add_pointers") {
-            TEST_SECTION_START
-            REQUIRE(arithmetic::add_pointers(&a, &b) == d);
-
-            arithmetic::add_pointers(&a, &b, c);
-            REQUIRE(c == d);
-        }
+        REQUIRE(factors::highest_common_factor(vals) == hcf);
     }
 }

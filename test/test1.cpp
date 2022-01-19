@@ -6,11 +6,9 @@
 
 #define TEST_SECTION_START std::cout << "Section start: a = " << a << ", b = " << b << "." << std::endl;
 
-TEST_CASE("Manual arguments", "[addition1]") {
+TEST_CASE("Addition functions", "[arithmetic]") {
 
-    typedef arithmetic::isize isize;
-
-    isize a = 0, b = 0, c = 0;
+    long a = 0, b = 0, c = 0;
 
     SECTION("add_integers") {
         TEST_SECTION_START

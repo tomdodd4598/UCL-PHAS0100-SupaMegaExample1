@@ -5,9 +5,9 @@
 
 namespace supa {
 
-    std::string add_string(isize a, isize b) {
-        isize c = arithmetic::add_integers(a, b);
-        isize d = arithmetic::add_pointers(&a, &b);
+    std::string add_string(long a, long b) {
+        long c = arithmetic::add_integers(a, b);
+        long d = arithmetic::add_pointers(&a, &b);
 
         std::string str = "Out of function: ";
         str += std::to_string(c);
